@@ -1,0 +1,50 @@
+* {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+}
+
+body {
+    margin: 0px;
+    background-color: rgb(237, 232, 232);
+}
+
+.head-fluid {
+    height: 60px;
+    background-color: gray;
+    display: flex;
+    justify-content: center; 
+    gap: 150px;
+}
+
+.head-fluid__button {
+    height: 60%;
+    border-radius: 10px;
+    border: none;
+    margin-top: 0.8%;
+}
+
+.head-fluid__button:hover {
+    color: red;
+}
+
+.body-fluid__dashboard {
+    font-size: 30px;
+    font-weight: 700;
+    margin-left: 10%;
+}
+
+.dashboard-flex {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 10%;
+    justify-content: center;
+}
+
+.dashboard-flex__cards {
+    background-color: whitesmoke;
+    border-radius: 10px;
+    height: 150px;
+    width: 300px;
+    
+}
