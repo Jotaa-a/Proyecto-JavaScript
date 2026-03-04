@@ -3,35 +3,34 @@
     font-family: "Exo 2", sans-serif;
 }
 html, body{
-    height:100%
-    margin 0;
+    height:100%;
 }
 .register_logo {
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
 }
 
 .background{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: url(../media/background.png) ;
+    justify-content: center;   /* centra vertical */
+    align-items: center;       /* centra horizontal */
+    min-height: 100vh;  /*para que no funcione solo en pc de mesa, lo obligo a tener un minimo*/
+    background: url(../media/background.png);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    background-position: center;
 }
 .background_img {
     background-color: rgb(48, 58, 73);
     text-align: center;
     border-radius: 15px;
     color: white;
-    margin-top: 6%;
-    font-family: "Playpen Sans Thai", cursive;
-    width: 22%;
-    height: 690px;
+    width: 90%;
+    max-width: 400px;   /* controla tamaño en pc */
+    padding: 30px;
     border: 4px groove rgb(207, 207, 207);
-/*FALTA DEFNIR ALTURA DEL PADRE*/
 }
+
 .background_img p{
     font-size: 28px;
     margin-top: 2%;
@@ -68,4 +67,50 @@ h4{
 
 .tittle{
     margin-bottom: 10%;
+}
+
+
+
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.activo {
+    display: flex;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.modal-content input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.loginBtn {
+    width: 95%;
+    padding: 10px;
+    background-color: #306844;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.cerrar {
+    float: right;
+    font-size: 25px;
+    cursor: pointer;
 }
