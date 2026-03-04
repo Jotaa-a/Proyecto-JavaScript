@@ -2,6 +2,8 @@ const botones = document.querySelectorAll(".rolBtn");
 const modal = document.getElementById("modal");
 const cerrarModal = document.getElementById("cerrarModal");
 const modalTitulo = document.getElementById("modalTitulo");
+const formulario = document.getElementById("formulario-login")
+const loginForm = document.getElementById("loginBoton");
 
 botones.forEach(boton => {
     boton.addEventListener("click", () => {
@@ -14,10 +16,9 @@ cerrarModal.addEventListener("click", () => {
     modal.classList.remove("activo");
 });
 
-const loginForm = document.getElementById("loginBoton");
+formulario.addEventListener("submit", function(e) { 
 
-loginForm.addEventListener("submit", function(e) {
-    e.preventDefault(); // evita que se recargue la página
+    e.preventDefault(); // Evita el envío y recargana
     
     window.location.href = "./pages/principalPageStudent.html";
 });
