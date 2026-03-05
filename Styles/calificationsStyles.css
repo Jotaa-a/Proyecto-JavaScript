@@ -7,6 +7,12 @@ body {
     margin: 0px;
     background-color: rgb(237, 232, 232);
     height: 100vh;
+    background: 
+        linear-gradient(rgba(44, 76, 59, 0.8), rgba(44, 76, 59, 0.8)),
+        url('../media/bgImage.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 /* Head designs */
@@ -61,4 +67,44 @@ body {
     flex-grow: 0;
     margin-top: 0;
     margin-bottom: 0;
+}
+
+.head-fluid__h4:hover {
+    cursor: pointer;
+}
+
+/* Body designs*/
+
+.body-fluid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.body-fluid__title h2{
+    margin-top: 50px;
+    margin-bottom: 40px;
+    color: white;
+    font-size: 40px;
+}
+
+.body-fluid__subjects {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.body-fluid__subject {
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+}
+
+.body-fluid__subject {
+    border-radius: 10px;
+    background-color: white;
+    width: 800px;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
 }
