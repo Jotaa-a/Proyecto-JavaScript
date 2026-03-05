@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../Styles/administration.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="head-fluid">
+        <img class="head-fluid__logo" src="../media/loginLogo.png" alt="Logo_Image">
+        <h4 class="head-fluid__h4">Portal Administracion</h4>
+        <div class="head-fluid__buttons">
+            <img class="head-fluid__button noti" src="../media/iconBell.png" alt="iconBell">
+            <img class="head-fluid__button config" src="../media/configIcon.png" alt="configIcon">
+            <img class="head-fluid__button profile" src="../media/logoProfile.png" alt="LogoProfile">
+        </div>
+    </div>
+    <div class="tittle">
+        <h1>Institucion De Aprendizaje ABC</h1>
+        <p>Perfil Del Administrador</p>
+    </div>
+    <div class="container-page">
+
+        <div class="cursos-activos" id="visualCursos">
+            <p>a</p>
+        </div>
+        <div class=" botones">
+            <button class="botoncitos crear-cursos">
+                crear cursos
+            </button>
+
+            <button class="botoncitos docentes">
+                Gestionar docentes
+            </button>
+
+            <button class="botoncitos lecciones-contenidos">
+                Lecciones y Contenidos
+            </button>
+        </div>
+    </div>
+
+    <div class="cursos-container" id="containerCursos">
+        <div class="cursos-contenido" id="contendidoCursos">
+        </div>
+    </div>
+</body>
+<script src="../AdministrationJS/administration.js"></script>
+</html>

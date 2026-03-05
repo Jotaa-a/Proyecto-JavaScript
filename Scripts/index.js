@@ -43,7 +43,7 @@ formulario.addEventListener("submit", function(e) {
                 break;
         case 'Administrador':
                 if(usr=== "administracionABC" && cntr ==="123") {
-                    window.location.href = "./pages/principalPageStudent.html";
+                    window.location.href = "./pages/administration.html";
                 }
                 else {
                     alert("Usuario o contraseña incorrectos, intente nuevamente")
