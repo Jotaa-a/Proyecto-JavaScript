@@ -3,36 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ABC</title>
     <link rel="stylesheet" href="./Styles/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- ============================================-->
-    <!--    PÁGINA DE INICIO DE SESIÓN (LOGIN)      -->
-    <!-- ============================================-->
-    <!-- Contenedor principal con imagen de fondo para la pantalla de login -->
-    <div class="background_img">
-        
-            
-            <!-- Logo secundario dentro del contenedor de login -->
-            <img class="register_logo" src="./media/loginLogo.png">
-            
-            <!-- Título de bienvenida principal -->
-            <!-- Utiliza <br> para dividir el texto en dos líneas -->
-            <div class="tittle">
-                <h1>Bienvenido</h1>
-                <h2>porfavor seleccione su rol</h2>
-            </div>
-            <div class="boton-container">
-                <button class="rolBtn">Estudiante</button>
-                <button class="rolBtn">Docente</button>
-                <button class="rolBtn">Administrador</button>
-            </div>
-                </form>
-            </div>
-            
+    <div class="background">
+        <div class="background_img">
+                <p>🎓 INSTITUCION ABC 🎓</p>
+                <img class="register_logo" src="./media/loginLogo.png">
+
+                <!-- Título de bienvenida principal -->
+                <!-- Utiliza <br> para dividir el texto en dos líneas -->
+                <div class="tittle">
+                    <h1>Bienvenido</h1>
+                    <h2>porfavor seleccione su rol</h2>
+                </div>
+                <div class="boton-container">
+                    <button class="rolBtn">Estudiante</button>
+                    <button class="rolBtn">Docente</button>
+                    <button class="rolBtn">Administrador</button>
+                </div>
+                <H4>Si presenta problemas, comunicarse con soporte</H4>
         </div>  
-    </div>  
+    </div>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span id="cerrarModal" class="cerrar">&times;</span>
+            <h2 id="modalTitulo"></h2>
+            <form id="formulario-login">
+                <input id= "usuario" type="text" placeholder="Usuario" required>
+                <input id = "contrasena" type="password" placeholder="Contraseña" required>
+                <button type="submit" id="loginBoton" class="loginBtn">Ingresar</button>
+            </form>
+        </div>
+    </div>
 </body>
 <script src="./Scripts/index.js"></script>
 </html>
