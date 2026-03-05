@@ -8,27 +8,50 @@ const usuario = document.getElementById("usuario");
 const contrasena = document.getElementById("contrasena")
 
 
-botones.forEach(boton => {
-    boton.addEventListener("click", () => {
+let cargo = ""; // variable global
+
+
+botones.forEach(i => {
+    i.addEventListener("click", () => {
         modal.classList.add("activo");
-        modalTitulo.textContent = "Login de " + boton.textContent;
+        modalTitulo.textContent = "Login de " + i.textContent;
+        cargo = i.textContent; // guardamos el texto
     });
 });
 
-
-cerrarModal.addEventListener("click", () => {
-    modal.classList.remove("activo");
-});
 
 formulario.addEventListener("submit", function(e) { 
     e.preventDefault(); // Evita el envío y recarga
     const usr= usuario.value 
     const cntr = contrasena.value
+    switch (cargo) {
+        case 'Estudiante':
+                if (usr === "juan" && cntr === "123") {
+                    window.location.href = "./pages/principalPageStudent.html";
+                }
+                else {
+                    alert("Usuario o contraseña incorrectos, intente nuevamente");
+                }
+                break;
+        case 'Docente':
+                if (usr === "docenciaABC" && cntr === "123") {
+                    window.location.href = "./pages/principalPageStudent.html";
+                }
+                else {
+                    alert("Usuario o contraseña incorrectos, intente nuevamente");
+                }
+                break;
+        case 'Administrador':
+                if(usr=== "administracionABC" && cntr ==="123") {
+                    window.location.href = "./pages/principalPageStudent.html";
+                }
+                else {
+                    alert("Usuario o contraseña incorrectos, intente nuevamente")
+                }
+                break;
+    }
+})
 
-    if (usr === "juan" && cntr === "123") {
-        window.location.href = "./pages/principalPageStudent.html";
-    }
-    else {
-        alert("Usuario o contraseña incorrectos, intente nuevamente")
-    }
+cerrarModal.addEventListener("click", () => {
+    modal.classList.remove("activo");
 });
