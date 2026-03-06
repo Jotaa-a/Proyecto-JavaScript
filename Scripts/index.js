@@ -26,15 +26,7 @@ formulario.addEventListener("submit", function(e) {
     const cntr = contrasena.value
     switch (cargo) {
         case 'Estudiante':
-                if (usr === "juan" && cntr === "123") {
-                    window.location.href = "./pages/principalPageStudent.html";
-                }
-                else {
-                    alert("Usuario o contraseña incorrectos, intente nuevamente");
-                }
-                break;
-        case 'Docente':
-                if (usr === "docenciaABC" && cntr === "123") {
+                if (usr === "juan@gmail.com" && cntr === "123") {
                     window.location.href = "./pages/principalPageStudent.html";
                 }
                 else {
@@ -42,7 +34,7 @@ formulario.addEventListener("submit", function(e) {
                 }
                 break;
         case 'Administrador':
-                if(usr=== "administracionABC" && cntr ==="123") {
+                if(usr=== "administracionABC@gmail.com" && cntr ==="123") {
                     window.location.href = "./pages/administration.html";
                 }
                 else {

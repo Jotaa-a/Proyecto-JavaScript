@@ -112,19 +112,26 @@
 
    <!--Agregar docentes--> 
 
-    <div class="form-agregar" id="form-agregar">
-        <div class="form-content">
-            <span id="cerraradd" class="cerrarAdd">&times;</span>
-            <h1>Añadir Un Nuevo Docente</h1>
-            <input type="text" id="nuevoCodigo" placeholder="Codigo del profesor">
-            <input type="text" id="nuevoProfesor" placeholder="Nombre del profesor">
-            <input type="text" id="nuevoEmail" placeholder="Email del profesor">
-            <input type="text" id="nuevoCurso" placeholder="Curso">
-            <input type="text" id="nuevaDuracion" placeholder="Duración">
-            <input type="text" id="nuevaImagen" placeholder="URL imagen">
-            <button class="addBTN" id="addBTN"type="button">añadir </button>
-        </div>
-    </div>
+<div class="form-agregar" id="form-agregar">
+    
+    <form class="form-content" id="formProfesor">
+
+        <span id="cerraradd" class="cerrarAdd">&times;</span>
+
+        <h1>Añadir Un Nuevo Docente</h1>
+
+        <input type="text" id="nuevoCodigo" placeholder="Codigo del profesor" required>
+        <input type="text" id="nuevoProfesor" placeholder="Nombre del profesor" required>
+        <input type="email" id="nuevoEmail" placeholder="Email del profesor" required>
+        <input type="text" id="nuevoCurso" placeholder="Curso" required>
+        <input type="text" id="nuevaDuracion" placeholder="Duración" required>
+        <input type="text" id="nuevaImagen" placeholder="URL imagen" required>
+
+        <button class="addBTN" type="submit">Añadir</button>
+
+    </form>
+
+</div>
 
     <script type="module" src="../AdministrationJS/administration.js"></script>
     <script type="module" src="../AdministrationJS/gestorCursos.js"></script>
