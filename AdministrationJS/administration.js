@@ -4,12 +4,18 @@ const cursos = document.getElementById("contenidoCursos")
 const containerCursos = document.getElementById("containerCursos")
 const visualizadorCursos = document.getElementById("visualCursos")
 const docentes = document.getElementById("botonDocentes")
-
+const cerrarModal =document.getElementById("cerrarModal")
+const contenidoDocentes = document.getElementById("contenido-docentes")
 
 localStorage.setItem('cursos', JSON.stringify(courses));
 
 const lista = JSON.parse(localStorage.getItem('cursos'));
 const tablaDocentes =document.getElementById("bodytabla");
+
+
+docentes.addEventListener("click", () => {
+        contenidoDocentes.classList.add("activo");
+    })
 
 //El += agrega sin borrar lo anterior. = solo lo hace una vez
 // data-set, guarda la informacion por decir invisiblemente
@@ -29,6 +35,10 @@ lista.forEach(i => {
             <td>${i.sesions}</td>
         </tr>
     `;
+});
+
+cerrarModal.addEventListener("click", () => {
+    contenidoDocentes.classList.remove("activo");
 });
 
 

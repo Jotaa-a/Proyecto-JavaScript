@@ -146,7 +146,7 @@ body {
 }
 
 .docentes {
-    display: flex ;
+    display: none;
     position: fixed;
     inset: 0;
     background: rgba(0,0,0,0.6);
@@ -200,4 +200,10 @@ body {
 .tableTitle th{
     padding: 20px;
     background-color:#53684b
+}
+
+.cerrar {
+    float: right;
+    font-size: 25px;
+    cursor: pointer;
 }
