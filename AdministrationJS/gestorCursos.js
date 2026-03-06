@@ -7,6 +7,9 @@ const cerrarModalCurso = document.getElementById('closeModalCurso');
 const btnGuardar = document.getElementById('btnGuardarCurso');
 const tablaCursos = document.getElementById('tablaCursos');
 const modalCursoTitulo = document.getElementById('modalCursoTitulo');
+const profileOp = document.getElementById('profile');
+const modalProfile = document.getElementById('modalProfile');
+const closeSesion = document.getElementById('closeSesion');
 
 /*Gestor cursos*/
 
@@ -106,5 +109,21 @@ window.eliminarCurso = function(index) {
     localStorage.setItem('cursos', JSON.stringify(lista));
     cargarTabla();
 }
+
+/*volver al login*/
+
+profileOp.addEventListener('click', () => {
+    modalProfile.classList.add('active')
+})
+
+document.addEventListener('click', (e) => {
+    if (!modalProfile.contains(e.target) && e.target !== profile) {
+        modalProfile.classList.remove('active');
+    }
+});
+
+closeSesion.addEventListener('click', () => {
+    window.location.replace('../index.html')
+})
 
 cargarTabla();
