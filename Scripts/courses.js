@@ -6,7 +6,9 @@ portalStudent.addEventListener('click', () => {
     window.location.href = portalStudent.dataset.href;
 });
 
-localStorage.setItem('cursos', JSON.stringify(courses));
+if(!localStorage.getItem("cursos")){
+    localStorage.setItem("cursos", JSON.stringify(courses));
+}
 
 
 const cursosGuardados = JSON.parse(localStorage.getItem('cursos'));
