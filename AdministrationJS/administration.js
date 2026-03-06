@@ -1,5 +1,6 @@
 import { courses } from "../Scripts/dataBase.js";
 
+/*Gestor docentes ids*/
 const cursos = document.getElementById("contenidoCursos")
 const containerCursos = document.getElementById("containerCursos")
 const visualizadorCursos = document.getElementById("visualCursos")
