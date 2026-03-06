@@ -40,7 +40,7 @@ export const courses = [
         title: 'Diseño Web',
         info: 'Principios de maquetación con HTML y CSS, diseño responsive y nociones básicas de UI/UX',
         profesor: 'Laura Gómez',
-        img: '../media/Laura-Gomez.png',
+        img: '../media/Luarua-Gomez.png',
         score: 70,
         sesions: 15,
         modulos: [
