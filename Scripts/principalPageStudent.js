@@ -1,5 +1,8 @@
 import { courses } from "./dataBase.js";
 
+const profileOp = document.getElementById('profile');
+const modalProfile = document.getElementById('modalProfile');
+const closeSesion = document.getElementById('closeSesion');
 const courseCard = document.querySelector('.small-card__link-course');
 courseCard.addEventListener('click', () => {
     window.location.href = courseCard.dataset.href;
@@ -20,3 +23,19 @@ const totalScores = courses.reduce((suma, curso) => suma + curso.score, 0); /*re
 const scoreAv = (totalScores / courses.length).toFixed(1); /*toFixed para la cantidad de decimales*/
 
 document.getElementById('scoreAV').textContent = scoreAv;
+
+/*volver al login*/
+
+profileOp.addEventListener('click', () => {
+    modalProfile.classList.add('active')
+})
+
+document.addEventListener('click', (e) => {
+    if (!modalProfile.contains(e.target) && e.target !== profile) {
+        modalProfile.classList.remove('active');
+    }
+});
+
+closeSesion.addEventListener('click', () => {
+    window.location.replace('../index.html')
+})
