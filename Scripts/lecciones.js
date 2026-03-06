@@ -5,6 +5,7 @@ const lista = JSON.parse(localStorage.getItem('cursos'));
 
 let cursoSeleccionado = null;   
 let moduloSeleccionado = null;  
+let leccionEditandoIndex = null;
 
 const btnVolver = document.getElementById('btnVolver');
 btnVolver.addEventListener('click', () => {
@@ -47,15 +48,43 @@ function cargarModulos() {
         const card = document.createElement('div');
         card.classList.add('card');
         card.innerHTML = `
-            <h3>${modulo.nombre}</h3>
-            <p>${modulo.descripcion}</p>
+            <div class="card-info">
+                <h3>${modulo.nombre}</h3>
+                <p>${modulo.descripcion}</p>
+            </div>
+            <div class="card-acciones">
+                <button class="btn-editar" id="btnEditarModulo${index}">Editar</button>
+                <button class="btn-eliminar" id="btnEliminarModulo${index}">Eliminar</button>
+            </div>
         `;
-        card.addEventListener('click', () => {
+
+        card.addEventListener('click', (e) => {
+            if (e.target.classList.contains('btn-editar') || e.target.classList.contains('btn-eliminar')) return;
             moduloSeleccionado = index;
             document.getElementById('tituloLecciones').textContent = modulo.nombre;
             cargarLecciones();
             mostrarVista('vistaLecciones');
         });
+
+        // editar módulo
+        card.querySelector(`#btnEditarModulo${index}`).addEventListener('click', () => {
+            moduloSeleccionado = index;
+            document.getElementById('inputNombreModulo').value = modulo.nombre;
+            document.getElementById('inputDescModulo').value = modulo.descripcion;
+            document.getElementById('tituloModalModulo').textContent = 'Editar Módulo';
+            modalModulo.classList.add('active');
+        });
+
+        // eliminar módulo
+        card.querySelector(`#btnEliminarModulo${index}`).addEventListener('click', () => {
+            if (!confirm('¿Seguro que querés eliminar este módulo?')) return;
+            const cursosLS = JSON.parse(localStorage.getItem('cursos'));
+            cursosLS[cursoSeleccionado].modulos.splice(index, 1);
+            localStorage.setItem('cursos', JSON.stringify(cursosLS));
+            lista[cursoSeleccionado].modulos = cursosLS[cursoSeleccionado].modulos;
+            cargarModulos();
+        });
+
         listaModulos.appendChild(card);
     });
 }
@@ -69,10 +98,19 @@ function cargarLecciones() {
         const card = document.createElement('div');
         card.classList.add('card');
         card.innerHTML = `
-            <h3>${leccion.titulo}</h3>
-            <p>${leccion.horas} horas</p>
+            <div class="card-info">
+                <h3>${leccion.titulo}</h3>
+                <p>${leccion.horas} horas</p>
+            </div>
+            <div class="card-acciones">
+                <button class="btn-editar" id="btnEditarLeccion${index}">Editar</button>
+                <button class="btn-eliminar" id="btnEliminarLeccion${index}">Eliminar</button>
+            </div>
         `;
-        card.addEventListener('click', () => {
+
+        // click en card para ver contenido
+        card.addEventListener('click', (e) => {
+            if (e.target.classList.contains('btn-editar') || e.target.classList.contains('btn-eliminar')) return;
             document.getElementById('tituloContenido').textContent = leccion.titulo;
             document.getElementById('contenidoHoras').textContent = `Intensidad horaria: ${leccion.horas}h`;
             document.getElementById('contenidoTexto').textContent = leccion.contenido;
@@ -81,6 +119,29 @@ function cargarLecciones() {
                 : 'Sin multimedia';
             mostrarVista('vistaContenido');
         });
+
+        // editar lección
+        card.querySelector(`#btnEditarLeccion${index}`).addEventListener('click', () => {
+            moduloSeleccionado = moduloSeleccionado;
+            document.getElementById('inputTituloLeccion').value = leccion.titulo;
+            document.getElementById('inputHorasLeccion').value = leccion.horas;
+            document.getElementById('inputContenidoLeccion').value = leccion.contenido;
+            document.getElementById('inputMultimediaLeccion').value = leccion.multimedia;
+            document.getElementById('tituloModalLeccion').textContent = 'Editar Lección';
+            leccionEditandoIndex = index;
+            modalLeccion.classList.add('active');
+        });
+
+        // eliminar lección
+        card.querySelector(`#btnEliminarLeccion${index}`).addEventListener('click', () => {
+            if (!confirm('¿Seguro que querés eliminar esta lección?')) return;
+            const cursosLS = JSON.parse(localStorage.getItem('cursos'));
+            cursosLS[cursoSeleccionado].modulos[moduloSeleccionado].lecciones.splice(index, 1);
+            localStorage.setItem('cursos', JSON.stringify(cursosLS));
+            lista[cursoSeleccionado].modulos[moduloSeleccionado].lecciones = cursosLS[cursoSeleccionado].modulos[moduloSeleccionado].lecciones;
+            cargarLecciones();
+        });
+
         listaLecciones.appendChild(card);
     });
 }
@@ -101,14 +162,51 @@ document.getElementById('btnGuardarModulo').addEventListener('click', () => {
     if (!nombre) return;
 
     const cursosLS = JSON.parse(localStorage.getItem('cursos'));
-    cursosLS[cursoSeleccionado].modulos.push({ nombre, descripcion, lecciones: [] });
+
+    if (moduloSeleccionado !== null && document.getElementById('tituloModalModulo').textContent === 'Editar Módulo') {
+        cursosLS[cursoSeleccionado].modulos[moduloSeleccionado] = {
+            ...cursosLS[cursoSeleccionado].modulos[moduloSeleccionado],
+            nombre,
+            descripcion
+        };
+    } else {
+        cursosLS[cursoSeleccionado].modulos.push({ nombre, descripcion, lecciones: [] });
+    }
+
     localStorage.setItem('cursos', JSON.stringify(cursosLS));
     lista[cursoSeleccionado].modulos = cursosLS[cursoSeleccionado].modulos;
-
     document.getElementById('inputNombreModulo').value = '';
     document.getElementById('inputDescModulo').value = '';
+    document.getElementById('tituloModalModulo').textContent = 'Agregar Módulo';
     modalModulo.classList.remove('active');
     cargarModulos();
+});
+
+document.getElementById('btnGuardarLeccion').addEventListener('click', () => {
+    const titulo = document.getElementById('inputTituloLeccion').value;
+    const horas = document.getElementById('inputHorasLeccion').value;
+    const contenido = document.getElementById('inputContenidoLeccion').value;
+    const multimedia = document.getElementById('inputMultimediaLeccion').value;
+    if (!titulo) return;
+
+    const cursosLS = JSON.parse(localStorage.getItem('cursos'));
+
+    if (leccionEditandoIndex !== null) {
+        cursosLS[cursoSeleccionado].modulos[moduloSeleccionado].lecciones[leccionEditandoIndex] = { titulo, horas, contenido, multimedia };
+        leccionEditandoIndex = null;
+    } else {
+        cursosLS[cursoSeleccionado].modulos[moduloSeleccionado].lecciones.push({ titulo, horas, contenido, multimedia });
+    }
+
+    localStorage.setItem('cursos', JSON.stringify(cursosLS));
+    lista[cursoSeleccionado].modulos[moduloSeleccionado].lecciones = cursosLS[cursoSeleccionado].modulos[moduloSeleccionado].lecciones;
+    document.getElementById('inputTituloLeccion').value = '';
+    document.getElementById('inputHorasLeccion').value = '';
+    document.getElementById('inputContenidoLeccion').value = '';
+    document.getElementById('inputMultimediaLeccion').value = '';
+    document.getElementById('tituloModalLeccion').textContent = 'Agregar Lección';
+    modalLeccion.classList.remove('active');
+    cargarLecciones();
 });
 
 /* Modal lección */
@@ -135,6 +233,8 @@ document.getElementById('btnGuardarLeccion').addEventListener('click', () => {
     modalLeccion.classList.remove('active');
     cargarLecciones();
 });
+
+/*edicion de lecciones*/
 
 /* Iniciar */
 cargarCursos();
