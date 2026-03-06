@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecciones y Contenidos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Styles/lecciones.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="head-fluid">
+        <img class="head-fluid__logo" src="../media/loginLogo.png" alt="Logo_Image">
+        <h4 class="head-fluid__h4" id="btnVolver"> Portal Administración</h4>
+        <div class="head-fluid__buttons">
+            <img class="head-fluid__button noti" src="../media/iconBell.png" alt="iconBell">
+            <img class="head-fluid__button config" src="../media/configIcon.png" alt="configIcon">
+            <img class="head-fluid__button profile" src="../media/logoProfile.png" alt="LogoProfile">
+        </div>
+    </div>
+
+    <!-- Cursos -->
+    <div class="vista active" id="vistaCursos">
+        <div class="vista-header">
+            <h2>Mis Cursos</h2>
+        </div>
+        <div class="lista-cards" id="listaCursos"></div>
+    </div>
+
+    <!--  Módulos -->
+    <div class="vista" id="vistaModulos">
+        <div class="vista-header">
+            <button class="btn-volver" id="btnVolverCursos">← Volver</button>
+            <h2 id="tituloModulos">Módulos</h2>
+        </div>
+        <div class="lista-cards" id="listaModulos"></div>
+    </div>
+
+    <!-- Lecciones -->
+    <div class="vista" id="vistaLecciones">
+        <div class="vista-header">
+            <button class="btn-volver" id="btnVolverModulos">← Volver</button>
+            <h2 id="tituloLecciones">Lecciones</h2>
+        </div>
+        <div class="lista-cards" id="listaLecciones"></div>
+    </div>
+
+    <!-- Contenido -->
+    <div class="vista" id="vistaContenido">
+        <div class="vista-header">
+            <button class="btn-volver" id="btnVolverLecciones">← Volver</button>
+            <h2 id="tituloContenido">Contenido</h2>
+        </div>
+        <div class="contenido-leccion">
+            <p id="contenidoHoras"></p>
+            <p id="contenidoTexto"></p>
+            <div id="contenidoMultimedia"></div>
+        </div>
+    </div>
+
+
+    <script type="module" src="../Scripts/leccionesStnd.js"></script>
+</body>
+</html>
