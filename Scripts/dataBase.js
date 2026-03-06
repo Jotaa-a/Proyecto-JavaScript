@@ -16,7 +16,7 @@ export const courses = [
         info: 'Principios de maquetación con HTML y CSS, diseño responsive y nociones básicas de UI/UX',
         profesor: 'Laura Gómez',
         img: '../media/Luarua-Gomez.png',
-        score: 90,
+        score: 70,
         sesions: '15'
     },
     {
@@ -25,7 +25,7 @@ export const courses = [
         info: 'Modelado entidad-relación, normalización y consultas con SQL en sistemas gestores como MySQL',
         profesor: 'Andrés Herrera',
         img: '../media/Andres-Herrera.png',
-        score: 90,
+        score: 83.5,
         sesions: '26'
     },
     {
@@ -34,7 +34,7 @@ export const courses = [
         info: 'Lectura y compresión de documentación técnica, vocabulario y escritura de reportes en inglés',
         profesor: 'Sandra Ríos',
         img: '../media/sandra-Rios.png',
-        score: 90,
+        score: 68.2,
         sesions: '40'
     }
 
