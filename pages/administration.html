@@ -25,12 +25,24 @@
     </div>
     <div class="container-page">
 
+        <!-- Tabla de cursos -->
         <div class="cursos-activos" id="visualCursos">
-            <p>a</p>
+            <table class="tabla-cursos">
+                <thead>
+                    <tr>
+                        <th>Cursos</th>
+                        <th>Profesor</th>
+                        <th>Sesiones</th>
+                        <th>Nota</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaCursos"></tbody>
+            </table>
         </div>
         <div class=" botones">
-            <button class="botoncitos crear-cursos">
-                crear cursos
+            <button class="botoncitos crear-cursos" id="btnGestorCuros">
+                Añadir cursos
             </button>
 
             <button class="botoncitos" id="botonDocentes">
@@ -66,6 +78,25 @@
             </table>
         </div>
     </div>
+
+    <!-- Modal formulario cursos -->
+    <div class="modal-cursos" id="modalCursos">
+        <div class="modal-cursos__content">
+            <button class="modal-cursos__close" id="closeModalCurso">x</button>
+            <h2 id="modalCursoTitulo">Crear Curso</h2>
+
+            <input type="text" id="inputTitle" placeholder="Nombre del curso">
+            <input type="text" id="inputProfesor" placeholder="Profesor">
+            <input type="text" id="inputInfo" placeholder="Descripción">
+            <input type="number" id="inputScore" placeholder="Nota">
+            <input type="number" id="inputSesions" placeholder="Sesiones">
+            <input type="text" id="inputImg" placeholder="Url imagen">
+
+            <button id="btnGuardarCurso">Guradar</button>
+        </div>
+    </div>
+
+
     <script type="module" src="../AdministrationJS/administration.js"></script>
 </body>
 </html>
