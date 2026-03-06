@@ -33,7 +33,7 @@
                 crear cursos
             </button>
 
-            <button class="botoncitos docentes">
+            <button class="botoncitos docentes" id="botonDocentes">
                 Gestionar docentes
             </button>
 
@@ -44,9 +44,27 @@
     </div>
 
     <div class="cursos-container" id="containerCursos">
-        <div class="cursos-contenido" id="contendidoCursos">
+        <div class="cursos-contenido" id="contenidoCursos">
         </div>
     </div>
+
+
+    <div class="docentes">
+        <div class="contenido-docentes">
+            <h1 id="titulo">Gestion de Docentes </h1>
+            <table class="tabla-profesores">
+                <thead >        
+                    <tr class="tableTitle">
+                        <th></th>
+                        <th>Nombre</th>
+                        <th>Curso</th>
+                        <th>Duracion del curso</th>
+                    </tr>
+                </thead>
+              <tbody id="bodytabla"></tbody>
+            </table>
+        </div>
+    </div>
+    <script type="module" src="../AdministrationJS/administration.js"></script>
 </body>
-<script src="../AdministrationJS/administration.js"></script>
 </html>

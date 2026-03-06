@@ -144,3 +144,60 @@ body {
     width: 60%;
     height: 70%;
 }
+
+.docentes {
+    display: flex ;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.docentes.active {
+    display: flex;
+}
+
+.contenido-docentes{
+    background-color: #eef1f5;
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;   /* centra horizontalmente */
+    align-items: center;       /* centra verticalmente */
+}
+
+/* TABLA */
+
+.tabla-profesores{
+    width: 80%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    margin: 30px;
+}
+
+.tabla-profesores td{    /*diseño de tablita*/
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #e4e4e4;
+}
+
+
+.titulo {
+    display: flex;
+    flex-direction: column;
+}
+
+.imagenDocente {
+    width: 100px;
+    height: 100px;
+
+}
+
+.tableTitle th{
+    padding: 20px;
+    background-color:#53684b
+}
