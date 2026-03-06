@@ -203,7 +203,9 @@ body {
 }
 
 .cerrar {
-    float: right;
     font-size: 25px;
     cursor: pointer;
+    position:fixed;
+    margin-left: 80%;
+    margin-bottom: 40%;
 }
