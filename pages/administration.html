@@ -50,6 +50,11 @@
                 Gestionar docentes
             </button>
 
+            <button class="botoncitos" id="agregarProfesor">
+                Agregar profesor
+            </button>
+            
+
             <button class="botoncitos lecciones-contenidos">
                 Lecciones y Contenidos
             </button>
@@ -73,6 +78,7 @@
                         <th>Nombre</th>
                         <th>Curso</th>
                         <th>Duracion del curso</th>
+                        <th></th>
                     </tr>
                 </thead>
               <tbody id="bodytabla"></tbody>
@@ -97,8 +103,22 @@
         </div>
     </div>
 
+   <!--Agregar docentes--> 
+
+    <div class="form-agregar" id="form-agregar">
+        <div class="form-content">
+            <span id="cerraradd" class="cerrarAdd">&times;</span>
+            <h1>Añadir Un Nuevo Docente</h1>
+            <input type="text" id="nuevoProfesor" placeholder="Nombre del profesor">
+            <input type="text" id="nuevoCurso" placeholder="Curso">
+            <input type="text" id="nuevaDuracion" placeholder="Duración">
+            <input type="text" id="nuevaImagen" placeholder="URL imagen">
+            <button class="addBTN" id="addBTN"type="button">añadir </button>
+        </div>
+    </div>
 
     <script type="module" src="../AdministrationJS/administration.js"></script>
     <script type="module" src="../AdministrationJS/gestorCursos.js"></script>
+    <script type="module" src="../AdministrationJS/añadirDocentes.js"></script>
 </body>
 </html>

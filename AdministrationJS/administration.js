@@ -6,9 +6,9 @@ const containerCursos = document.getElementById("containerCursos")
 const visualizadorCursos = document.getElementById("visualCursos")
 const docentesBTN = document.getElementById("botonDocentes")
 const cerrarModal =document.getElementById("cerrarModal")
-const contenidoDocentes = document.querySelector(".contenido-docentes")
+const contenidoDocentes = document.getElementById("docentes")
 
-localStorage.setItem('cursos', JSON.stringify(courses));
+
 
 const lista = JSON.parse(localStorage.getItem('cursos'));
 const tablaDocentes =document.getElementById("bodytabla");
@@ -31,17 +31,39 @@ lista.forEach(i => {
             data-curso = "${i.title}"
             data-duracion = "${i.sesions}"
             data-imagen = "${i.img}">
-            
             <td >
                 <img class="imagenDocente" src="${i.img}">
             </td>
             <td>${i.profesor }</td>
             <td>${i.title}</td>
             <td>${i.sesions}</td>
+            <td><button class="eliminationBTN"> Eliminar </button></td>
         </tr>
     `;
 });
+const eliminarBTN = document.querySelectorAll(".eliminationBTN");
 
-cerrarModal.addEventListener("click", () => {
-    contenidoDocentes.classList.remove("activo");
+eliminarBTN.forEach(btn => {
+
+    btn.addEventListener("click", function(){
+
+        const fila = this.closest("tr");
+        const nombre = fila.dataset.name;
+
+        // eliminar visualmente
+        fila.remove();
+
+        // eliminar del array
+        const index = lista.findIndex(curso => curso.profesor === nombre);
+
+        if(index !== -1){
+            lista.splice(index,1);
+        }
+
+        // actualizar localStorage
+        localStorage.setItem("cursos", JSON.stringify(lista));
+
+    });
+
 });
+
