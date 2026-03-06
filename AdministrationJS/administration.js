@@ -9,9 +9,6 @@ const cerrarModal =document.getElementById("cerrarModal")
 const contenidoDocentes = document.getElementById("docentes")
 
 
-if(!localStorage.getItem("cursos")){
-    localStorage.setItem("cursos", JSON.stringify(courses));    //NO se vuelve a sobrescribir
-}
 
 const lista = JSON.parse(localStorage.getItem('cursos'));
 const tablaDocentes =document.getElementById("bodytabla");
