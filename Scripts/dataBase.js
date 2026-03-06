@@ -1,6 +1,8 @@
 export const courses = [
     {
         title: 'Introduccion a la Programación',
+        codigo:'001',
+        email:'carlos@gmail.com',
         info: 'Fundamentos de lógica, algoritmos y programación orientada a objetos usando Python',
         profesor: 'Carlos Martínez',
         img: '../media/Carlos-Martinez.png',
@@ -38,6 +40,8 @@ export const courses = [
     },
     {
         title: 'Diseño Web',
+        codigo:'002',
+        email:'laura@gmail.com',
         info: 'Principios de maquetación con HTML y CSS, diseño responsive y nociones básicas de UI/UX',
         profesor: 'Laura Gómez',
         img: '../media/Luarua-Gomez.png',
@@ -75,6 +79,8 @@ export const courses = [
     },
     {
         title: 'Base de Datos',
+        codigo:'003',
+        email:'andres@gmail.com',
         info: 'Modelado entidad-relación, normalización y consultas con SQL en sistemas gestores como MySQL',
         profesor: 'Andrés Herrera',
         img: '../media/Andres-Herrera.png',
@@ -112,6 +118,8 @@ export const courses = [
     },
     {
         title: 'Inglés Técnico',
+        codigo:'004',
+        email:'sandra@gmail.com',
         info: 'Lectura y comprensión de documentación técnica, vocabulario y escritura de reportes en inglés',
         profesor: 'Sandra Ríos',
         img: '../media/Sandra-Rios.png',

@@ -10,6 +10,7 @@ const inputCurso = document.getElementById("nuevoCurso");
 const inputDuracion = document.getElementById("nuevaDuracion");
 const inputImagen = document.getElementById("nuevaImagen");
 const inputCodigo =document.getElementById("nuevoCodigo")
+const inputEmail =document.getElementById("nuevoEmail")
 
 if(!localStorage.getItem("cursos")){
     localStorage.setItem("cursos", JSON.stringify(courses));  /*Si no existe cursos en localStorage → entonces guardar el array original*/
@@ -30,6 +31,7 @@ anadir.addEventListener("click", (e) => {
 
     const nuevo = {
         codigo: inputCodigo.value,
+        email: inputEmail.value,
         profesor: inputProfesor.value,
         title: inputCurso.value,
         sesions: inputDuracion.value,
