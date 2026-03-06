@@ -40,7 +40,7 @@ anadir.addEventListener("click", (e) => {
 
     lista.push(nuevo);
 
-    localStorage.setItem("cursos", JSON.stringify(lista));
+    localStorage.setItem("cursos", JSON.stringify(lista));  /*localStorage solo guarda texto, no arrays ni objetos.*/
 
     alert("Profesor añadido:", nuevo);
     agregarContainer.classList.remove("active");

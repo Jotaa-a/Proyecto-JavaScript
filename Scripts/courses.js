@@ -2,6 +2,7 @@ import { courses } from "./dataBase.js";
 
 /* Button go back */
 const portalStudent = document.querySelector('.head-fluid__h4');
+const contenedor = document.querySelector('.courses__cards');
 portalStudent.addEventListener('click', () => {
     window.location.href = portalStudent.dataset.href;
 });
@@ -12,8 +13,6 @@ if(!localStorage.getItem("cursos")){
 
 
 const cursosGuardados = JSON.parse(localStorage.getItem('cursos'));
-const contenedor = document.querySelector('.courses__cards');
-
 cursosGuardados.forEach(curso => {
     contenedor.innerHTML += `
         <div class="course__card" 

@@ -1,20 +1,20 @@
 import { courses } from "./dataBase.js";
 
-if(!localStorage.getItem("cursos")){
-    localStorage.setItem("cursos", JSON.stringify(courses));  /*Si no existe cursos en localStorage → entonces guardar el array original*/
-}  
+
 const portalStudent = document.querySelector('.head-fluid__h4');
+const contenedor = document.querySelector('.body-fluid__subjects');
 portalStudent.addEventListener('click', () => {
     window.location.href = portalStudent.dataset.href;
 });
 
-localStorage.setItem('cursos', JSON.stringify(courses));
+if(!localStorage.getItem("cursos")){
+    localStorage.setItem("cursos", JSON.stringify(courses));  /*Si no existe cursos en localStorage → entonces guardar el array original*/
+}  
+
 const lista = JSON.parse(localStorage.getItem("cursos"));
 
-const cursosGuardados = JSON.parse(localStorage.getItem('cursos'));
-const contenedor = document.querySelector('.body-fluid__subjects');
 
-cursosGuardados.forEach(curso => {
+lista.forEach(curso => {
     contenedor.innerHTML += ` 
         <div class="body-fluid__subject"
             data-title="${curso.title}"
