@@ -32,11 +32,13 @@ lista.forEach(i => {
             data-curso = "${i.title}"
             data-duracion = "${i.sesions}"
             data-imagen = "${i.img}"
-            data-codigo = "${i.codigo}">
+            data-codigo = "${i.codigo}"
+            data-email ="${i.email}">
             <td>${i.codigo}</td>
             <td >
                 <img class="imagenDocente" src="${i.img}">
             </td>
+            <td>${i.email}</td>
             <td>${i.profesor }</td>
             <td>${i.title}</td>
             <td>${i.sesions}</td>

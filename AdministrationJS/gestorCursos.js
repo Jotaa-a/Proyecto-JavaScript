@@ -30,7 +30,6 @@ function cargarTabla() {
                 <td>${curso.title}</td>
                 <td>${curso.profesor}</td>
                 <td>${curso.sesions}</td>
-                <td>${curso.score}</td>
                 <td>
                     <button onclick="editarCurso(${index})">Editar</button>
                     <button onclick="eliminarCurso(${index})">Eliminar</button>
