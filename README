@@ -1,0 +1,185 @@
+# Panel de Administrador - Institución de Aprendizaje ABC
+
+## Descripción del Proyecto
+
+Este proyecto consiste en la creación de una interfaz web simple para el **perfil de administrador** de una institución educativa llamada **Institución de Aprendizaje ABC**.
+
+El objetivo principal es mostrar una estructura clara donde el administrador pueda:
+
+* Visualizar los **cursos activos**
+* Acceder a opciones de gestión mediante botones
+* Mantener un diseño **simple, ordenado e institucional**
+
+La página está diseñada utilizando **HTML y CSS**, aplicando conceptos básicos de maquetación web.
+
+---
+
+# Estructura de la Página
+
+La página está dividida en **dos secciones principales**:
+
+### 1. Encabezado (Título)
+
+Contiene el nombre de la institución y el tipo de perfil.
+
+```html
+<div class="tittle">
+    <h1>Institucion De Aprendizaje ABC</h1>
+    <p>Perfil Del Administrador</p>
+</div>
+```
+
+Este encabezado sirve para identificar la página y darle un estilo institucional.
+
+---
+
+### 2. Contenedor Principal
+
+El contenido principal está dentro de un contenedor llamado:
+
+```
+.container-page
+```
+
+Este contenedor utiliza **CSS Grid** para dividir la página en dos columnas:
+
+* **Columna izquierda:** Cursos activos
+* **Columna derecha:** Botones de gestión
+
+```css
+.container-page{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+```
+
+Esto significa:
+
+* La sección de cursos ocupa **más espacio**
+* La sección de botones ocupa **menos espacio**
+
+---
+
+# Sección de Cursos Activos
+
+La sección de cursos activos funciona como una **cuadrícula donde se mostrarán los cursos disponibles**.
+
+```html
+<div class="cursos-activos">
+    cursos activos
+</div>
+```
+
+Su objetivo es mostrar información importante para el administrador, como:
+
+* cursos disponibles
+* cursos creados
+* cursos en funcionamiento
+
+En el futuro se pueden agregar **tarjetas de cursos** dentro de esta sección.
+
+---
+
+# Sección de Botones de Administración
+
+En el lado derecho se encuentran los botones de gestión.
+
+```html
+<div class="botones">
+
+<button class="botoncitos cursos">
+visualizar cursos
+</button>
+
+<button class="botoncitos crear-cursos">
+crear cursos
+</button>
+
+<button class="botoncitos docentes">
+Gestionar docentes
+</button>
+
+<button class="botoncitos lecciones-contenidos">
+Lecciones y Contenidos
+</button>
+
+</div>
+```
+
+Estos botones permiten acceder a diferentes funciones administrativas como:
+
+* ver cursos existentes
+* crear nuevos cursos
+* administrar docentes
+* gestionar contenidos o lecciones
+
+Los botones están organizados usando **Flexbox en columna** para mantener el orden.
+
+```css
+.botones{
+display: flex;
+flex-direction: column;
+gap: 15px;
+}
+```
+
+---
+
+# Diseño Visual
+
+Se utilizaron colores simples para mantener un estilo **institucional y limpio**.
+
+### Colores utilizados
+
+* Gris claro → fondo general
+* Blanco → contenedores
+* Verde oscuro → botones
+* Gris oscuro → textos secundarios
+
+Esto permite que la página sea:
+
+* fácil de leer
+* ordenada
+* profesional
+
+---
+
+# Problema encontrado durante el desarrollo
+
+Uno de los problemas fue que la sección **cursos-activos no ocupaba toda la altura de la página**.
+
+Esto sucedía porque el contenedor principal no tenía una altura definida.
+
+La solución fue agregar:
+
+```css
+min-height: 100vh;
+```
+
+Esto hace que el contenedor tenga **al menos la altura completa de la pantalla**.
+
+---
+
+# Tecnologías utilizadas
+
+* HTML5
+* CSS3
+
+No se utilizaron frameworks ni librerías externas.
+
+---
+
+# Posibles mejoras futuras
+
+Algunas mejoras que se pueden agregar en el futuro son:
+
+* mostrar tarjetas reales de cursos
+* Mejorar la conexion de Datos
+* agregar base de datos
+* mejorar el diseño responsivo para celulares
+
+---
+
+# Autor
+
+Proyecto desarrollado como práctica de **maquetación web y diseño de interfaz administrativa con JS**.
