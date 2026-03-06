@@ -1,11 +1,16 @@
 import { courses } from "../Scripts/dataBase.js";
 
+/*Gestor docentes ids*/
 const cursos = document.getElementById("contenidoCursos")
 const containerCursos = document.getElementById("containerCursos")
 const visualizadorCursos = document.getElementById("visualCursos")
 const docentes = document.getElementById("botonDocentes")
 const cerrarModal =document.getElementById("cerrarModal")
-const contenidoDocentes = document.getElementById("contenido-docentes")
+const contenidoDocentes = document.querySelector(".contenido-docentes")
+
+/*Gestor cursos ids*/
+
+
 
 localStorage.setItem('cursos', JSON.stringify(courses));
 
@@ -41,4 +46,4 @@ cerrarModal.addEventListener("click", () => {
     contenidoDocentes.classList.remove("activo");
 });
 
-
+/*Gestor cursos*/
