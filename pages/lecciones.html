@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecciones y Contenidos</title>
+    <link rel="stylesheet" href="../Styles/lecciones.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="head-fluid">
+        <img class="head-fluid__logo" src="../media/loginLogo.png" alt="Logo_Image">
+        <h4 class="head-fluid__h4" id="btnVolver" data-href="./administration.html"> Portal Administración</h4>
+        <div class="head-fluid__buttons">
+            <img class="head-fluid__button noti" src="../media/iconBell.png" alt="iconBell">
+            <img class="head-fluid__button config" src="../media/configIcon.png" alt="configIcon">
+            <img class="head-fluid__button profile" src="../media/logoProfile.png" alt="LogoProfile">
+        </div>
+    </div>
+
+    <!-- Vista 1: Cursos -->
+    <div class="vista active" id="vistaCursos">
+        <div class="vista-header">
+            <h2>Seleccioná un curso</h2>
+        </div>
+        <div class="lista-cards" id="listaCursos"></div>
+    </div>
+
+    <!-- Vista 2: Módulos -->
+    <div class="vista" id="vistaModulos">
+        <div class="vista-header">
+            <button class="btn-volver" id="btnVolverCursos">← Volver</button>
+            <h2 id="tituloModulos">Módulos</h2>
+            <button class="btn-agregar" id="btnAgregarModulo">+ Agregar Módulo</button>
+        </div>
+        <div class="lista-cards" id="listaModulos"></div>
+    </div>
+
+    <!-- Vista 3: Lecciones -->
+    <div class="vista" id="vistaLecciones">
+        <div class="vista-header">
+            <button class="btn-volver" id="btnVolverModulos">← Volver</button>
+            <h2 id="tituloLecciones">Lecciones</h2>
+            <button class="btn-agregar" id="btnAgregarLeccion">+ Agregar Lección</button>
+        </div>
+        <div class="lista-cards" id="listaLecciones"></div>
+    </div>
+
+    <!-- Vista 4: Contenido de lección -->
+    <div class="vista" id="vistaContenido">
+        <div class="vista-header">
+            <button class="btn-volver" id="btnVolverLecciones">← Volver</button>
+            <h2 id="tituloContenido">Contenido</h2>
+        </div>
+        <div class="contenido-leccion">
+            <p id="contenidoHoras"></p>
+            <p id="contenidoTexto"></p>
+            <div id="contenidoMultimedia"></div>
+        </div>
+    </div>
+
+    <!-- Modal módulo -->
+    <div class="modal-form" id="modalModulo">
+        <div class="modal-form__content">
+            <button class="modal-form__close" id="cerrarModalModulo">✕</button>
+            <h2 id="tituloModalModulo">Agregar Módulo</h2>
+            <input type="text" id="inputNombreModulo" placeholder="Nombre del módulo">
+            <input type="text" id="inputDescModulo" placeholder="Descripción">
+            <button id="btnGuardarModulo">Guardar</button>
+        </div>
+    </div>
+
+    <!-- Modal lección -->
+    <div class="modal-form" id="modalLeccion">
+        <div class="modal-form__content">
+            <button class="modal-form__close" id="cerrarModalLeccion">✕</button>
+            <h2 id="tituloModalLeccion">Agregar Lección</h2>
+            <input type="text" id="inputTituloLeccion" placeholder="Título de la lección">
+            <input type="number" id="inputHorasLeccion" placeholder="Intensidad horaria (horas)">
+            <textarea id="inputContenidoLeccion" placeholder="Contenido de la lección"></textarea>
+            <input type="text" id="inputMultimediaLeccion" placeholder="URL multimedia (video, PDF, imagen)">
+            <button id="btnGuardarLeccion">Guardar</button>
+        </div>
+    </div>
+
+    <script type="module" src="../Scripts/lecciones.js"></script>
+</body>
+</html>
