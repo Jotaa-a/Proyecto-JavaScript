@@ -7,6 +7,8 @@
 body {
     background-color: rgb(237, 232, 232);
 }
+
+/* head designs*/
 .head-fluid {
     height: 8vh;
     width: 100%;
@@ -46,7 +48,7 @@ body {
 
 .head-fluid__logo {
     margin-left: 4.8%;
-    height: 60px;
+    height: 45px;
 }
 
 .head-fluid__h4 {
