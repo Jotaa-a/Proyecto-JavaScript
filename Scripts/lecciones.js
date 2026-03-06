@@ -1,6 +1,8 @@
 import { courses } from "./dataBase.js";
 
-localStorage.setItem('cursos', JSON.stringify(courses));
+if(!localStorage.getItem("cursos")){
+    localStorage.setItem("cursos", JSON.stringify(courses));  /*Si no existe cursos en localStorage → entonces guardar el array original*/
+}  
 const lista = JSON.parse(localStorage.getItem('cursos'));
 
 let cursoSeleccionado = null;   
