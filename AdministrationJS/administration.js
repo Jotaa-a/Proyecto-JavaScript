@@ -1,5 +1,4 @@
 import { courses } from "../Scripts/dataBase.js";
-
 /*Gestor docentes ids*/
 const cursos = document.getElementById("contenidoCursos")
 const containerCursos = document.getElementById("containerCursos")
@@ -8,11 +7,13 @@ const docentesBTN = document.getElementById("botonDocentes")
 const cerrarModal =document.getElementById("cerrarModal")
 const contenidoDocentes = document.getElementById("docentes")
 
-
-
-const lista = JSON.parse(localStorage.getItem('cursos'));
+if(!localStorage.getItem("cursos")){
+    localStorage.setItem("cursos", JSON.stringify(courses));
+}
+const lista = JSON.parse(localStorage.getItem("cursos"));
 const tablaDocentes =document.getElementById("bodytabla");
 
+console.log(lista)
 
 docentesBTN.addEventListener("click", () => {
         contenidoDocentes.classList.add("active");
@@ -30,7 +31,9 @@ lista.forEach(i => {
             data-name ="${i.profesor}"  
             data-curso = "${i.title}"
             data-duracion = "${i.sesions}"
-            data-imagen = "${i.img}">
+            data-imagen = "${i.img}"
+            data-codigo = "${i.codigo}">
+            <td>${i.codigo}</td>
             <td >
                 <img class="imagenDocente" src="${i.img}">
             </td>

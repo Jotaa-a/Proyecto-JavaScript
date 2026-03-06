@@ -3,6 +3,7 @@
 export const courses = [
     {
         id: 'modalIntro',
+        codigo: '001',
         title: 'Introduccion a la Progamación',
         info: 'Fundamentos de lógica, algoritmos y programación orientada a objetos usando Python',
         profesor: 'Carlos Martínez',
@@ -12,6 +13,7 @@ export const courses = [
     },
     {
         id: 'modalDesign',
+        codigo: '002',
         title: 'Diseño Web',
         info: 'Principios de maquetación con HTML y CSS, diseño responsive y nociones básicas de UI/UX',
         profesor: 'Laura Gómez',
@@ -21,6 +23,7 @@ export const courses = [
     },
     {
         id: 'modalBD',
+        codigo: '003',
         title: 'Base de Datos',
         info: 'Modelado entidad-relación, normalización y consultas con SQL en sistemas gestores como MySQL',
         profesor: 'Andrés Herrera',
@@ -30,6 +33,7 @@ export const courses = [
     },
     {
         id: 'modalnglés',
+        codigo: '004',
         title: 'Inglés Técnico',
         info: 'Lectura y compresión de documentación técnica, vocabulario y escritura de reportes en inglés',
         profesor: 'Sandra Ríos',
