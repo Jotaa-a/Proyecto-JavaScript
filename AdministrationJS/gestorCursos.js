@@ -11,13 +11,11 @@ const profileOp = document.getElementById('profile');
 const modalProfile = document.getElementById('modalProfile');
 const closeSesion = document.getElementById('closeSesion');
 
+/*Gestor cursos*/
 /*boton lecciones*/
 document.getElementById('btnLecciones').addEventListener('click', () => {
     window.location.replace('../pages/lecciones.html')
 });
-
-/*Gestor cursos*/
-
 let cursoEditandoIndex = null;
 
 function cargarTabla() {
@@ -35,6 +33,7 @@ function cargarTabla() {
                 <td>${curso.title}</td>
                 <td>${curso.profesor}</td>
                 <td>${curso.sesions}</td>
+                <td>${curso.score}</td>
                 <td>
                     <button onclick="editarCurso(${index})">Editar</button>
                     <button onclick="eliminarCurso(${index})">Eliminar</button>

@@ -9,9 +9,7 @@ let moduloSeleccionado = null;
 
 function mostrarVista(idVista) {
     document.querySelectorAll('.vista').forEach(v => v.classList.remove('active'));
-    document.getElementById(idVista).classList.add('active');
-}
-
+    document.getElementById(idVista).classList.add('active');}
 /*Cargar Cursos*/
 function cargarCursos() {
     const listaCursos = document.getElementById('listaCursos');
