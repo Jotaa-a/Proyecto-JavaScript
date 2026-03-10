@@ -94,7 +94,7 @@ function cargarLecciones() {
     const listaLecciones = document.getElementById('listaLecciones');
     listaLecciones.innerHTML = '';
     const lecciones = lista[cursoSeleccionado].modulos[moduloSeleccionado].lecciones || [];
-    lecciones.forEach((leccion) => {
+    lecciones.forEach((leccion, index) => {
         const card = document.createElement('div');
         card.classList.add('card');
         card.innerHTML = `
@@ -111,6 +111,7 @@ function cargarLecciones() {
         // click en card para ver contenido
         card.addEventListener('click', (e) => {
             if (e.target.classList.contains('btn-editar') || e.target.classList.contains('btn-eliminar')) return;
+            console.log("si funciona el boton al menos")
             document.getElementById('tituloContenido').textContent = leccion.titulo;
             document.getElementById('contenidoHoras').textContent = `Intensidad horaria: ${leccion.horas}h`;
             document.getElementById('contenidoTexto').textContent = leccion.contenido;

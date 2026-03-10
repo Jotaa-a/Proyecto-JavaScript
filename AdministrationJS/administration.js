@@ -53,6 +53,15 @@ eliminarBTN.forEach(btn => {
         const fila = this.closest("tr");
         const nombre = fila.dataset.name;
 
+            // verificar si tiene cursos asignados
+        const cursos = JSON.parse(localStorage.getItem('cursos')) || [];
+        const tieneCursos = cursos.some(curso => curso.profesor === nombre);
+
+        if (tieneCursos) {
+        alert(`No se puede eliminar a ${nombre} porque tiene cursos asignados.`);
+        return; // detiene la ejecución, no elimina
+        }
+
         // eliminar visualmente
         fila.remove();
 
