@@ -114,7 +114,7 @@ export const courses = [
         title: 'Inglés Técnico',
         info: 'Lectura y comprensión de documentación técnica, vocabulario y escritura de reportes en inglés',
         profesor: 'Sandra Ríos',
-        img: '../media/Sandra-Rios.png',
+        img: '../media/sandra-Rios.png',
         score: 68.2,
         sesions: 40,
         modulos: [
