@@ -162,14 +162,14 @@ body {
     font-size: 50px;
 }
 
-.small-card__link-course:hover, .small-card__link-califications:hover, .small-card__link-lections:hover{
+.small-card__link-course:hover, .small-card__link-califications:hover, .small-card__link-lections:hover, .small-card__link-reports:hover{
     transform: scale(1.05);
     box-shadow: none;
     font-size: 18px ;
     cursor: pointer;
 }
 
-.small-card__link-course:hover h3, .small-card__link-califications:hover h3, .small-card__link-lections:hover h3{
+.small-card__link-course:hover h3, .small-card__link-califications:hover h3, .small-card__link-lections:hover h3, .small-card__link-reports:hover h3{
     font-size: 16px;
     font-weight: bold;
 }

@@ -1,0 +1,211 @@
+* {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    margin: 0;
+}
+
+body {
+    margin: 0px;
+    background-color: rgb(237, 232, 232);
+    height: 100vh;
+    width: 100%;
+    background: 
+        linear-gradient(rgba(44, 76, 59, 0.8), rgba(44, 76, 59, 0.8)),
+        url('../media/bgImage.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Head designs */
+
+.head-fluid {
+    height: 8vh;
+    width: 100%;
+    background-color: rgb(62, 79, 104);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.head-fluid__button {
+    height: 36px;
+    cursor: pointer;
+}
+
+.profile {
+    height: 45px;
+    width: 45px;
+}
+
+.config {
+    height: 25px;
+    width: 25px;
+}
+
+.noti {
+    height: 32px;
+    width: 32px;
+}
+
+.head-fluid__buttons{
+    margin-left: auto;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: end;
+}
+
+.head-fluid__button:hover {
+    transform: scale(1.2);
+}
+
+.head-fluid__logo {
+    margin-left: 4.8%;
+    height: 45px;
+}
+
+.head-fluid__h4 h4 {
+    margin-left: 2%;
+    font-size: 18px;
+    white-space: nowrap;
+    color: white;
+    flex-grow: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.head-fluid__h4:hover {
+    cursor: pointer;
+}
+
+/* Body designs */
+
+.body-fluid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.body-fluid__head {
+    margin-top: 25px;
+}
+
+.body-fluid__head h2 {
+    font-weight: bold;
+    color: white;
+    font-size: 45px;
+}
+
+.report__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 10px;
+}
+
+.report__card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin-bottom: 15px;
+    width: 750px;
+    height: 80px;
+}
+
+.report__card:hover {
+    transform: scale(1.05);
+}
+
+.report-card__logo {
+    width: 50px;
+    height: 50px;
+}
+
+.report-card__subject {
+    flex-grow: 1;       
+    text-align: center;  
+    margin: 0 15px;  
+    font-size: 22px;
+}
+
+.report-card__score {
+    font-weight: 700;
+    font-size: 22px;
+}
+
+/* modal Cards */
+.report__modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.report__modal.active {
+    display: flex;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    border-radius: 15px;
+    background-color: rgb(62, 79, 104);
+    width: 500px;
+    padding: 30px;
+    position: relative;
+}
+
+
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.modal-content h2 {
+    margin: 0;
+    font-size: 28px;
+    color: white;
+    text-align: center;
+}
+
+.report-info {
+    font-size: 16px;
+    color: rgb(220, 220, 220);
+    text-align: center;
+}
+
+.report-profesor {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.report-profesor p {
+    color: white;
+    margin: 0;
+}
+
+.report-prof__img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}

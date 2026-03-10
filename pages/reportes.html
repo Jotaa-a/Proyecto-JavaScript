@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos</title>
+    <link rel="stylesheet" href="../Styles/reportesStyles.css">
+</head>
+<body>
+    <div class="head-fluid">
+        <img class="head-fluid__logo" src="../media/loginLogo.png" alt="Logo_Image">
+        <div class="head-fluid__h4"  data-href="./principalPageStudent.html">
+            <h4 >Portal Estudiante</h4>
+        </div>
+        <div class="head-fluid__buttons">
+            <img class="head-fluid__button noti" src="../media/iconBell.png" alt="iconBell">
+            <img class="head-fluid__button config" src="../media/configIcon.png" alt="configIcon">
+            <img class="head-fluid__button profile" src="../media/logoProfile.png" alt="LogoProfile">
+        </div>
+    </div>
+    <div class="body-fluid">
+        <div class="body-fluid__head">
+            <h2>Cursos</h2>
+        </div>
+
+        <div class="reports__cards">
+        <!-- Modal cards -->
+
+        <div class="report__modal" id="report__modal">
+            <div class="modal-content">
+                <button class="modal-close" id="modalClose">x</button>
+                <h2 id="modalTitle">Titulo</h2>
+                <div class="report-info" id="modalInfo">Descripcion</div>
+                <div class="report-profesor">
+                    <img class="report-prof__img" id="modalProfesorImg" src="../media/logoProfile.png" alt="" >
+                    <p id="modalProfesorName">Nombre Docente</p>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+    </div>
+    <script type="module" src="../Scripts/reports.js"></script>
+    <script type="module" src="../Scripts/dataBase.js"></script>
+</body>
+</html>

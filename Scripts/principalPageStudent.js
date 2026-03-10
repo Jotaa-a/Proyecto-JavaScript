@@ -18,6 +18,11 @@ lectionsCard.addEventListener('click', () => {
     window.location.href = lectionsCard.dataset.href;
 });
 
+const reportsCard = document.querySelector('.small-card__link-reports');
+reportsCard.addEventListener('click', () => {
+    window.location.href = reportsCard.dataset.href;
+});
+
 /*Score average*/
 const totalScores = courses.reduce((suma, curso) => suma + curso.score, 0); /*reduce similar a forEach pero va acumulando*/
 const scoreAv = (totalScores / courses.length).toFixed(1); /*toFixed para la cantidad de decimales*/
