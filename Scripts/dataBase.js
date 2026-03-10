@@ -157,3 +157,17 @@ export const courses = [
     }
 ];
 
+export const profesores = [
+    {
+        name: 'Carlos Martínez'
+    },
+    {
+        name: 'Laura Gómez'
+    },
+    {
+        name: 'Andrés Herrera'
+    },
+    {
+        name: 'Sandra Ríos'
+    },
+]

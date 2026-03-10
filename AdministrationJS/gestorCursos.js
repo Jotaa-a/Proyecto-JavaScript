@@ -1,4 +1,8 @@
 import { courses } from "../Scripts/dataBase.js";
+import { profesores } from "../Scripts/dataBase.js";
+localStorage.setItem('cursos', JSON.stringify(courses)); 
+localStorage.setItem('profesores', JSON.stringify(profesores));
+
 
 /*Gestor cursos ids*/
 const btnCrear = document.getElementById('btnGestorCuros');
@@ -43,12 +47,25 @@ function cargarTabla() {
     });
 };
 
+function profesorOpt() {
+    console.log("si se actva")
+    const selectProfesores = document.getElementById('selectProfesores');
+    selectProfesores.innerHTML = '<option value="">Seleccionar profesor</option>';
+    
+    const choseProfes = JSON.parse(localStorage.getItem('profesores')) || [];
+    choseProfes.forEach((profe) => {
+        selectProfesores.innerHTML += `
+            <option value="${profe.name}">${profe.name}</option>
+        `;
+    });
+}
+
 /* Abrir modal para crear*/
 btnCrear.addEventListener('click', () => {
     cursoEditandoIndex = null;
     modalCursoTitulo.textContent = 'Crear Curso';
     document.getElementById('inputTitle').value = '';
-    document.getElementById('inputProfesor').value = '';
+    profesorOpt();
     document.getElementById('inputInfo').value = '';
     document.getElementById('inputScore').value = '';
     document.getElementById('inputSesions').value = '';
@@ -70,7 +87,7 @@ btnGuardar.addEventListener('click', () => {
 
     const cursoDato = {
         title: document.getElementById('inputTitle').value,
-        profesor: document.getElementById('inputProfesor').value,
+        profesor: document.getElementById('selectProfesores').value,
         info: document.getElementById('inputInfo').value,
         score: document.getElementById('inputScore').value,
         sesions: document.getElementById('inputSesions').value,
@@ -96,7 +113,7 @@ window.editarCurso = function(index) {
 
     modalCursoTitulo.textContent = "Editar Curso";
     document.getElementById('inputTitle').value = curso.title;
-    document.getElementById('inputProfesor').value = curso.profesor;
+    profesorOpt();
     document.getElementById('inputInfo').value = curso.info;
     document.getElementById('inputScore').value = curso.score;
     document.getElementById('inputSesions').value = curso.sesions;
